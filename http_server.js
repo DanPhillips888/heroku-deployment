@@ -12,6 +12,8 @@ app.use(cors());
 // init the data store
 db.defaults({ users: []}).write();
 
+let port = process.env.PORT || 3000;
+
 // serve static files
 app.use(express.static('public'));
 
@@ -53,6 +55,6 @@ app.post('/add', function(req, res){
 
 // start server
 // -----------------------
-app.listen(3000, function(){
-    console.log('Running on port 3000!');
+app.listen(port, function(){
+    console.log(`Running on port ${port}`);
 });
